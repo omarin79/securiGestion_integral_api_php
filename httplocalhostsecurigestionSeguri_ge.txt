@@ -1,1 +1,0 @@
-http://localhost/securigestion/Seguri_gestion_integral_PHP/generar_pagos.php
