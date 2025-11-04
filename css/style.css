@@ -1,0 +1,480 @@
+/* =================================================================== */
+/* HOJA DE ESTILOS COMPLETA Y DEFINITIVA                           */
+/* PARA SECURIGESTIÓN INTEGRAL                                     */
+/* =================================================================== */
+
+/* --- COLORES INSTITUCIONALES Y VARIABLES --- */
+:root {
+    --color-institucional-primario: #003366; /* Azul oscuro */
+    --color-institucional-secundario: #f0f0f0; /* Gris claro */
+    --color-institucional-texto-header: #ffffff; /* Texto blanco para header */
+    --color-institucional-texto-footer: #333333; /* Texto oscuro para footer */
+    --color-enlaces: #0056b3; /* Azul medio para enlaces */
+    --watermark-opacity: 0.1; /* Opacidad de la marca de agua */
+}
+
+/* --- ESTILOS GENERALES Y TIPOGRAFÍA MEJORADA --- */
+body {
+    font-family: 'Roboto', sans-serif; /* Fuente principal moderna */
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-institucional-secundario);
+    color: #444; /* Negro más suave para reducir fatiga visual */
+    font-size: 16px;
+    line-height: 1.6; /* Espaciado de línea para mejor legibilidad */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('../images/logo_central.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 80vw auto;
+    opacity: var(--watermark-opacity);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- ESTRUCTURA PRINCIPAL (HEADER, CONTENT, FOOTER) --- */
+header.main-header {
+    background-color: var(--color-institucional-primario);
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    height: 60px;
+}
+
+#content-wrapper {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    overflow-y: auto;
+    height: calc(100vh - 140px);
+    box-sizing: border-box;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-institucional-secundario);
+    color: var(--color-institucional-texto-footer);
+    border-top: 1px solid #ccc;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 100;
+    height: 60px;
+}
+
+/* --- ENCABEZADO Y NAVEGACIÓN --- */
+#header-logo {
+    height: 50px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+header nav.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 25px 0 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--color-institucional-texto-header);
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* --- FOTO DE PERFIL CIRCULAR Y NOMBRE --- */
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    margin-right: 10px;
+}
+
+.user-info span {
+    color: var(--color-institucional-texto-header);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* --- ESTILOS DE PÁGINAS Y FORMULARIOS --- */
+.page-content {
+    padding: 0 20px;
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+section h1, section h2 {
+    font-weight: 700;
+    border-bottom: 2px solid var(--color-institucional-primario);
+    padding-bottom: 8px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--color-institucional-primario);
+}
+
+section h2 {
+    font-size: 1.5em;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+input[type="tel"],
+input[type="email"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+button {
+    background-color: var(--color-enlaces);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 1em;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #004494;
+}
+
+fieldset {
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+/* --- CONTENEDORES DE LOGIN/REGISTRO RESPONSIVOS --- */
+.login-container {
+    width: 90%;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+    .login-container {
+        max-width: 480px;
+        padding: 40px;
+    }
+}
+
+/* --- MENSAJES DE ERROR Y ÉXITO --- */
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+/* --- ESTILOS PARA LA LISTA DE AUTOCOMPLETAR --- */
+.autocomplete-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid #ddd;
+    border-top: none;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+.autocomplete-suggestion {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.autocomplete-suggestion:hover {
+    background-color: #f0f0f0;
+}
+
+/* --- ESTILO ADICIONAL PARA CENTRAR EL FORMULARIO DE REGISTRO --- */
+.registro-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.registro-container section {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+}
+
+/* --- ESTILOS ADICIONALES PARA EL FORMULARIO DE REGISTRO/LOGIN --- */
+.login-links {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.login-links a {
+    color: var(--color-enlaces);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-links a:hover {
+    text-decoration: underline;
+}
+
+/* --- ESTILO PARA BOTÓN SECUNDARIO --- */
+.btn-secondary {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    width: calc(100% - 32px);
+    transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* ================================================= */
+/* ESTILOS ESPECÍFICOS Y CORREGIDOS PARA MI PERFIL   */
+/* ================================================= */
+
+.perfil-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.perfil-foto {
+    flex-shrink: 0;
+}
+
+#mi-perfil-page .avatar-grande {
+    width: 180px !important;
+    height: 180px !important;
+    border-radius: 50%;
+    border: 5px solid var(--color-institucional-primario);
+    object-fit: cover;
+}
+
+.perfil-datos {
+    flex-grow: 1;
+}
+
+.perfil-datos h2 {
+    border-bottom: none;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 2em;
+}
+
+.rol-perfil {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #6c757d;
+    margin-top: 0;
+}
+
+.perfil-datos p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.btn-actualizar {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-actualizar:hover {
+    background-color: #218838;
+}
+
+.btn-cancelar {
+    display: inline-block;
+    width: calc(100% - 32px);
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #6c757d;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-cancelar:hover {
+    background-color: #5a6268;
+}
+/* --- Estilos para centrar el formulario de visitas --- */
+.registro-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.registro-container section {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+}
+/* --- DISEÑO FINAL Y DEFINITIVO DEL DASHBOARD DE INICIO --- */
+
+/* Contenedor principal de la página con fondo gris claro */
+#inicio-page main,
+#plataforma-operativa-page main {
+    background-color: #f4f6f9; /* Color de fondo gris claro */
+    padding: 25px;
+    border-radius: 10px;
+}
+
+/* Contenedor de la cuadrícula para las tarjetas */
+#inicio-page .menu-container,
+#plataforma-operativa-page .menu-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Estilo individual de cada tarjeta del menú */
+.menu-card {
+    display: flex !important;
+    align-items: center;
+    padding: 25px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: none; /* Quitamos cualquier borde previo */
+}
+
+.menu-card:hover {
+    transform: translateY(-10px) scale(1.02); /* Efecto más pronunciado */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* Contenedor del icono a la izquierda */
+.menu-card .icon-container {
+    font-size: 2.5em;
+    margin-right: 25px;
+    flex-shrink: 0;
+}
+
+/* Contenedor del texto (título y subtítulo) */
+.menu-card .text-container {
+    text-align: left;
+}
+
+.menu-card .card-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.menu-card .card-subtitle {
+    font-size: 0.9em;
+    margin: 5px 0 0 0;
+    opacity: 0.9;
+}
+
+/* Colores de fondo para cada tarjeta */
+.card-blue { background: linear-gradient(45deg, #0052D4, #4364F7, #6FB1FC); }
+.card-green { background: linear-gradient(45deg, #136a8a, #267871); }
+.card-orange { background: linear-gradient(45deg, #ff8c00, #ffaf60); }
+.card-purple { background: linear-gradient(45deg, #473B7B, #3584A7); }
+.card-red { background: linear-gradient(45deg, #d32f2f, #ef5350); }
+.card-teal { background: linear-gradient(45deg, #00796B, #00897B); }
+.card-grey { background: linear-gradient(45deg, #616161, #9E9E9E); }
